@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 max-w-4xl text-5xl font-black leading-[0.92] tracking-[-0.045em] text-zinc-950 dark:text-white sm:text-6xl lg:text-[5.2rem]"
           >
-            Construo interfaces, APIs e automações com foco em produto real.
+            Produtos digitais escaláveis e automação inteligente.
           </motion.h1>
 
           <motion.p
@@ -49,8 +49,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-8 max-w-2xl text-[1.05rem] leading-8 text-zinc-600 dark:text-zinc-300"
           >
-            Sou Sergio Guimarães, desenvolvedor focado em experiências modernas,
-            sistemas escaláveis e soluções que conectam frontend, backend e negócio.
+            Desenvolvedor focado em arquitetar e implementar ecossistemas que unem TypeScript, Node.js e automações avançadas. Especialista em tirar projetos do papel e transformá-los em ferramentas prontas para o mercado.
           </motion.p>
 
           <motion.div
@@ -63,14 +62,14 @@ export function Hero() {
               href="#projetos"
               className="rounded-full bg-zinc-950 px-6 py-3 text-sm font-semibold text-white transition hover:scale-[1.02] dark:bg-white dark:text-zinc-950"
             >
-              Explorar projetos
+              Conhecer Portfólio
             </a>
 
             <a
               href="#api"
               className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-800 transition hover:border-zinc-950 hover:bg-zinc-950 hover:text-white dark:border-white/15 dark:text-white dark:hover:bg-white dark:hover:text-zinc-950"
             >
-              Simular API
+              Ver API em ação
             </a>
           </motion.div>
 

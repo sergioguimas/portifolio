@@ -13,7 +13,7 @@ type Project = {
   highlights: string[];
   href: string;
   icon: LucideIcon;
-  images: any;
+  images: string[];
 };
 
 const projects: Project[] = [
@@ -70,7 +70,6 @@ const projects: Project[] = [
     icon: Building2,
     images: [
       "/images/projects/solucao (1).webp",
-      "/images/projects/solucao (2).webp",
       "/images/projects/solucao (2).webp",
       "/images/projects/solucao (3).webp",
       "/images/projects/solucao (4).webp",

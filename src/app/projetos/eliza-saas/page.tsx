@@ -1,4 +1,4 @@
-export default function AutomacoesEmpresariaisPage() {
+export default function ElizaSaaSPage() {
   return (
     <main className="min-h-screen px-6 py-16">
       <h1 className="text-4xl font-bold">Eliza SaaS</h1>

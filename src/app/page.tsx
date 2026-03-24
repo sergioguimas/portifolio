@@ -3,6 +3,7 @@ import { Hero } from "@/components/portfolio/hero";
 import { About } from "@/components/portfolio/about";
 import { Skills } from "@/components/portfolio/skills";
 import { Projects } from "@/components/portfolio/projects";
+import { ApiShowcase } from "@/components/portfolio/api-showcase";
 import { Contact } from "@/components/portfolio/contact";
 import { NeuralBackground } from "@/components/portfolio/neural-background";
 
@@ -15,6 +16,7 @@ export default function HomePage() {
       <About />
       <Skills />
       <Projects />
+      <ApiShowcase />
       <Contact />
     </main>
   );

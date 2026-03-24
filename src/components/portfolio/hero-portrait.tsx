@@ -71,6 +71,7 @@ export function HeroPortrait() {
                 fill
                 priority
                 className="object-cover object-center grayscale contrast-110 brightness-[0.92]"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_28%,rgba(34,211,238,0.22),transparent_30%)] mix-blend-screen" />
