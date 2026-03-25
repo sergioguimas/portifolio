@@ -21,8 +21,8 @@ const projects: Project[] = [
     category: "SaaS / HealthTech",
     title: "Eliza",
     description:
-      "SaaS multi-tenant para clínicas médicas com controle de agenda, prontuário, gestão de pacientes e integração com WhatsApp.",
-    highlights: ["Multi-tenant", "Agenda e prontuário", "WhatsApp"],
+      "SaaS multi-tenant para clínicas médicas com controle de agenda, prontuário, gestão de pacientes e redução no tempo de agendamento através de automação via WhatsApp",
+    highlights: ["Multi-tenant", "RLS (Row Level Security)", "Escalabilidade"],
     href: "/projetos/eliza-saas",
     icon: HeartPulse,
     images: [

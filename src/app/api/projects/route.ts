@@ -9,7 +9,7 @@ export async function GET() {
         title: "Eliza",
         category: "SaaS / HealthTech",
         description:
-          "SaaS multi-tenant para clínicas médicas com agenda, prontuário, gestão de pacientes e integração com WhatsApp.",
+          "SaaS multi-tenant para clínicas médicas com agenda, prontuário, gestão de pacientes e redução no tempo de agendamento através de automação via WhatsApp",
         stack: ["Next.js", "Supabase", "TypeScript"],
         href: "/projetos/eliza-saas",
       },

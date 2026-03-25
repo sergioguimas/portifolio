@@ -13,6 +13,7 @@ import {
   Palette,
   Globe,
   Radar,
+  Telescope,
 } from "lucide-react";
 
 const timelineItems = [
@@ -24,6 +25,13 @@ const timelineItems = [
     icon: GraduationCap,
   },
   {
+    label: "Atuação",
+    title: "Suporte e Técnico",
+    description:
+      "Atualmente, atuo na Geti Soluções, onde foco em transformar necessidades operacionais em produtos digitais escaláveis, liderando o desenvolvimento de ecossistemas que unem automação inteligente e gestão estratégica.",
+    icon: BriefcaseBusiness,
+  },
+  {
     label: "Experiência prática",
     title: "Arquitetura de Integrações e Agentes de IA",
     description:
@@ -31,11 +39,11 @@ const timelineItems = [
     icon: Rocket,
   },
   {
-    label: "Foco Atual",
+    label: "Visão e objetivos",
     title: "Engenharia de Produto & SaaS",
     description:
       "Liderando o ciclo completo de produtos digitais: do design da interface à arquitetura de banco de dados, com foco em escalabilidade e experiência do usuário.",
-    icon: BriefcaseBusiness,
+    icon: Telescope,
   },
 ];
 
@@ -78,13 +86,23 @@ const educationExtra = [
     icon: Palette,
   },
   {
+    category: "SaaS & Business",
+    items: ["Arquitetura Multi-tenant", "Regras de Negócio", "MVP"],
+    icon: BriefcaseBusiness, 
+  },
+  {
+    category: "Processos",
+    items: ["Metodologias Ágeis", "Git Flow", "Clean Code"],
+    icon: Workflow,
+  },
+  {
     category: "Eventos & Tech",
     items: ["Latinoware 24", "Campus Party 25"],
     icon: Globe,
   },
   {
     category: "Inovação",
-    items: ["IA Generativa", "Gestão Proativa"],
+    items: ["IA Generativa", "Agentes Autônomos"],
     icon: Radar,
   },
 ];
@@ -100,7 +118,6 @@ export function About() {
           viewport={{ once: true }}
           className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]"
         >
-          {/* LADO ESQUERDO: TEXTO E CONHECIMENTOS COMPLEMENTARES */}
           <div className="flex flex-col">
             <p className="text-sm uppercase tracking-[0.24em] text-cyan-700 dark:text-cyan-300">
               Sobre mim
@@ -111,7 +128,7 @@ export function About() {
             </h2>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-zinc-600 dark:text-zinc-300 sm:text-lg">
-              Sou Sérgio Guimarães, desenvolvedor focado em converter necessidades de negócio em ferramentas funcionais. Unindo IA, automação de workflows e sistemas escaláveis, ajudo empresas a automatizar o complexo e focar no que importa.
+              Sou Sérgio Guimarães, desenvolvedor focado em converter necessidades de negócio em ferramentas funcionais. Unindo IA, automação de workflows e sistemas escaláveis, ajudo empresas a automatizar o complexo e focar no que importa. Interessado na intersecção entre código eficiente e viabilidade de produto. Experiência em arquitetura multi-tenant e fluxos de retenção de usuários.
             </p>
 
             <div className="mt-5 rounded-[1.75rem] border border-zinc-200 bg-white/65 p-7 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 flex-grow">
@@ -121,17 +138,16 @@ export function About() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
                 {educationExtra.map((extra) => (
-                  <div key={extra.category} className="flex items-center gap-4">
-                    {/* Ícone com o estilo ciano da timeline */}
+                  <div key={extra.category} className="flex items-center gap-2 dark:bg-black/20 rounded-xl border">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-700 dark:text-cyan-300 transition-colors group-hover:border-cyan-400/40">
                       <extra.icon size={22} strokeWidth={1.5} />
                     </div>
                     <div>
                       <h4 className="text-base font-semibold text-zinc-950 dark:text-white">{extra.category}</h4>
-                      <div className="mt-1.5 flex flex-wrap gap-x-1.5 gap-y-1">
+                      <div className="flex flex-wrap gap-x-1">
                         {extra.items.map((i) => (
                           <span key={i} className="text-sm text-zinc-600 dark:text-zinc-300">
-                            {i}<span className="text-zinc-400 dark:text-zinc-500 last:hidden">,</span>
+                            {i}<span className="text-zinc-400 dark:text-zinc-500 last:hidden">,</span>; 
                           </span>
                         ))}
                       </div>
@@ -142,7 +158,6 @@ export function About() {
             </div>
           </div>
 
-          {/* LADO DIREITO: TIMELINE */}
           <div className="rounded-[2rem] border border-zinc-200 bg-white/65 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/5 sm:p-8">
             <div className="space-y-6">
               {timelineItems.map((item, index) => {
@@ -177,7 +192,6 @@ export function About() {
           </div>
         </motion.div>
 
-        {/* PILLARS GRID */}
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {pillars.map((item, index) => {
             const Icon = item.icon;
