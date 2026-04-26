@@ -13,12 +13,17 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=public"
+      - "traefik.http.routers.portfolio-app-http.rule=Host(`sgdev.cloud`) || Host(`www.sgdev.cloud`)"
+      - "traefik.http.routers.portfolio-app-http.entrypoints=web"
+      - "traefik.http.routers.portfolio-app-http.middlewares=portfolio-app-https-redirect"
+      - "traefik.http.middlewares.portfolio-app-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.portfolio-app.rule=Host(`sgdev.cloud`) || Host(`www.sgdev.cloud`)"
       - "traefik.http.routers.portfolio-app.entrypoints=websecure"
-      - "traefik.http.routers.portfolio-app.tls.certresolver=meuresolver"
+      - "traefik.http.routers.portfolio-app.tls=true"
+      - "traefik.http.routers.portfolio-app.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}"
+      - "traefik.http.routers.portfolio-app.tls.domains[0].main=sgdev.cloud"
+      - "traefik.http.routers.portfolio-app.tls.domains[0].sans=www.sgdev.cloud"
       - "traefik.http.services.portfolio-app.loadbalancer.server.port=3000"
-    env_file:
-      - .env
 
 networks:
   public:
