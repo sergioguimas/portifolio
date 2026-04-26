@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  portfolio-app:
+    container_name: portfolio-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - public
+      - private
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=public"
+      - "traefik.http.routers.portfolio-app.rule=Host(`sgdev.cloud`) || Host(`www.sgdev.cloud`)"
+      - "traefik.http.routers.portfolio-app.entrypoints=websecure"
+      - "traefik.http.routers.portfolio-app.tls.certresolver=meuresolver"
+      - "traefik.http.services.portfolio-app.loadbalancer.server.port=3000"
+    env_file:
+      - .env
+
+networks:
+  public:
+    external: true
+  private:
+    external: true
