@@ -2,18 +2,16 @@
 
 import { motion } from "framer-motion";
 import {
-  Bot,
+  Braces,
   BriefcaseBusiness,
   Database,
   GraduationCap,
-  Languages,
-  Rocket,
-  Workflow,
-  MonitorCog,
-  Palette,
-  Globe,
+  Layers3,
   Radar,
-  Telescope,
+  Route,
+  SearchCheck,
+  ServerCog,
+  Workflow,
 } from "lucide-react";
 
 const timelineItems = [
@@ -21,89 +19,79 @@ const timelineItems = [
     label: "Formação",
     title: "Análise e Desenvolvimento de Sistemas · IFNMG",
     description:
-      "Foco em algoritmos e estrutura de dados, com conclusão prevista para 2026. Base técnica sólida aplicada diretamente na resolução de problemas de mercado.",
+      "Formação em andamento, combinada com projetos práticos que aproximam fundamentos técnicos de necessidades reais de produto e operação.",
     icon: GraduationCap,
   },
   {
     label: "Atuação",
-    title: "Suporte e Técnico",
+    title: "Desenvolvimento aplicado à operação",
     description:
-      "Atualmente, atuo na Geti Soluções, onde foco em transformar necessidades operacionais em produtos digitais escaláveis, liderando o desenvolvimento de ecossistemas que unem automação inteligente e gestão estratégica.",
+      "Experiência próxima de usuários, processos e suporte técnico — contexto que ajuda a identificar onde um sistema ou uma automação realmente gera valor.",
     icon: BriefcaseBusiness,
   },
   {
     label: "Experiência prática",
-    title: "Arquitetura de Integrações e Agentes de IA",
+    title: "Sistemas, integrações e automações",
     description:
-      "Desenvolvimento de ecossistemas automatizados, conectando APIs complexas e criando agentes inteligentes para otimização de processos operacionais e financeiros.",
-    icon: Rocket,
+      "Projetos com SaaS multi-tenant, regras comerciais, formulários complexos, WhatsApp, APIs, scripts e agentes de IA.",
+    icon: Layers3,
   },
   {
-    label: "Visão e objetivos",
-    title: "Engenharia de Produto & SaaS",
+    label: "Forma de trabalhar",
+    title: "Entender antes de automatizar",
     description:
-      "Liderando o ciclo completo de produtos digitais: do design da interface à arquitetura de banco de dados, com foco em escalabilidade e experiência do usuário.",
-    icon: Telescope,
+      "Mapeio o problema, os dados e as exceções antes de escolher a stack. O objetivo é construir uma solução útil e sustentável, não apenas adicionar tecnologia.",
+    icon: SearchCheck,
   },
 ];
 
 const pillars = [
   {
-    title: "Full Stack Moderno",
+    title: "Contexto antes do código",
     description:
-      "Domínio de TypeScript, Next.js e Tailwind CSS para criar interfaces de alta fidelidade e aplicações robustas.",
-    icon: Workflow,
+      "Entender quem usa, como o processo funciona e onde estão os riscos antes de desenhar a solução.",
+    icon: Radar,
   },
   {
-    title: "Especialista em n8n",
+    title: "Implementação ponta a ponta",
     description:
-      "Automação de workflows complexos e integração nativa com IA para eliminar gargalos manuais.",
-    icon: Bot,
+      "Conectar interface, backend, banco de dados e serviços externos dentro do mesmo fluxo de produto.",
+    icon: Route,
   },
   {
-    title: "Infraestrutura de Dados",
+    title: "Regras de negócio explícitas",
     description:
-      "Modelagem eficiente com PostgreSQL e Supabase, garantindo integridade e performance para aplicações multi-tenant.",
+      "Tratar permissões, datas, status e cálculos como parte central do sistema, com consistência e rastreabilidade.",
     icon: Database,
   },
   {
-    title: "Global Mindset",
+    title: "Evolução contínua",
     description:
-      "Comunicação técnica em inglês para documentação, colaboração em projetos globais e aprendizado contínuo.",
-    icon: Languages,
+      "Construir, observar o uso, corrigir arestas e transformar aprendizado operacional em melhoria de produto.",
+    icon: Workflow,
   },
 ];
 
-const educationExtra = [
+const practiceAreas = [
   {
-    category: "Sistemas & Infra",
-    items: ["Windows", "Office", "Manutenção"],
-    icon: MonitorCog,
+    category: "SaaS e multi-tenant",
+    items: ["organizações", "permissões", "RLS"],
+    icon: ServerCog,
   },
   {
-    category: "Design & UX",
-    items: ["Photoshop", "Web Design", "CorelDraw"],
-    icon: Palette,
+    category: "Dados e APIs",
+    items: ["PostgreSQL", "REST", "webhooks"],
+    icon: Database,
   },
   {
-    category: "SaaS & Business",
-    items: ["Arquitetura Multi-tenant", "Regras de Negócio", "MVP"],
-    icon: BriefcaseBusiness, 
-  },
-  {
-    category: "Processos",
-    items: ["Metodologias Ágeis", "Git Flow", "Clean Code"],
+    category: "Automação",
+    items: ["n8n", "Playwright", "scripts"],
     icon: Workflow,
   },
   {
-    category: "Eventos & Tech",
-    items: ["Latinoware 24", "Campus Party 25"],
-    icon: Globe,
-  },
-  {
-    category: "Inovação",
-    items: ["IA Generativa", "Agentes Autônomos"],
-    icon: Radar,
+    category: "Produto web",
+    items: ["Next.js", "TypeScript", "PWA"],
+    icon: Braces,
   },
 ];
 
@@ -124,36 +112,46 @@ export function About() {
             </p>
 
             <h2 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-zinc-950 dark:text-white sm:text-5xl">
-              De ideias abstratas a sistemas de alta performance.
+              Desenvolvimento próximo do problema — e de quem vive o processo.
             </h2>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-zinc-600 dark:text-zinc-300 sm:text-lg">
-              Sou Sérgio Guimarães, desenvolvedor focado em converter necessidades de negócio em ferramentas funcionais. Unindo IA, automação de workflows e sistemas escaláveis, ajudo empresas a automatizar o complexo e focar no que importa. Interessado na intersecção entre código eficiente e viabilidade de produto. Experiência em arquitetura multi-tenant e fluxos de retenção de usuários.
+              Sou Sérgio Guimarães, estudante de Análise e Desenvolvimento de Sistemas no
+              IFNMG e desenvolvedor focado em transformar necessidades operacionais em
+              sistemas web, automações e produtos digitais funcionais.
             </p>
 
-            <div className="mt-5 rounded-[1.75rem] border border-zinc-200 bg-white/65 p-7 backdrop-blur-xl dark:border-white/10 dark:bg-white/5 flex-grow">
-              <p className="mb-8 text-xs uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400 font-medium">
-                Conhecimentos Complementares
+            <p className="mt-4 max-w-xl text-base leading-8 text-zinc-600 dark:text-zinc-300">
+              Tenho trabalhado com aplicações multi-tenant, dashboards, integrações via API,
+              automações com WhatsApp, formulários públicos e scripts internos. Meu foco é
+              unir interface, dados e regra de negócio sem perder de vista o uso cotidiano.
+            </p>
+
+            <div className="mt-7 grow rounded-[1.75rem] border border-zinc-200 bg-white/65 p-7 backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+              <p className="mb-7 text-xs font-medium uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">
+                Experiência aplicada
               </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
-                {educationExtra.map((extra) => (
-                  <div key={extra.category} className="flex items-center gap-2 dark:bg-black/20 rounded-xl border">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-700 dark:text-cyan-300 transition-colors group-hover:border-cyan-400/40">
-                      <extra.icon size={22} strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <h4 className="text-base font-semibold text-zinc-950 dark:text-white">{extra.category}</h4>
-                      <div className="flex flex-wrap gap-x-1">
-                        {extra.items.map((i) => (
-                          <span key={i} className="text-sm text-zinc-600 dark:text-zinc-300">
-                            {i}<span className="text-zinc-400 dark:text-zinc-500 last:hidden">,</span>; 
-                          </span>
-                        ))}
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                {practiceAreas.map((area) => {
+                  const Icon = area.icon;
+
+                  return (
+                    <div key={area.category} className="flex items-start gap-3">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-700 dark:text-cyan-300">
+                        <Icon size={19} />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold text-zinc-950 dark:text-white">
+                          {area.category}
+                        </h3>
+                        <p className="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
+                          {area.items.join(" · ")}
+                        </p>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -162,8 +160,9 @@ export function About() {
             <div className="space-y-6">
               {timelineItems.map((item, index) => {
                 const Icon = item.icon;
+
                 return (
-                  <motion.div
+                  <motion.article
                     key={item.title}
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -185,7 +184,7 @@ export function About() {
                         {item.description}
                       </p>
                     </div>
-                  </motion.div>
+                  </motion.article>
                 );
               })}
             </div>
@@ -195,8 +194,9 @@ export function About() {
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {pillars.map((item, index) => {
             const Icon = item.icon;
+
             return (
-              <motion.div
+              <motion.article
                 key={item.title}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +213,7 @@ export function About() {
                 <p className="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
                   {item.description}
                 </p>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>

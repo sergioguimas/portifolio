@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio — Sérgio Guimarães
 
-## Getting Started
+Portfólio profissional voltado a cases reais de desenvolvimento web, SaaS, automação e integrações. O projeto apresenta não apenas as tecnologias utilizadas, mas o problema, a atuação, as regras de negócio e os aprendizados de cada trabalho.
 
-First, run the development server:
+## Proposta
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+> Desenvolvimento web, automação e produtos digitais para resolver problemas reais de negócio.
+
+A home organiza o perfil, os tipos de problema atendidos, a stack e os projetos em destaque. Cada case possui uma página dedicada e reaproveita a mesma fonte tipada usada pelos cards e pela API pública do portfólio.
+
+## Cases em destaque
+
+- **Eliza:** SaaS multi-tenant para clínicas, com agenda, PWA e automações via WhatsApp.
+- **Fidelidade:** sistema comercial com compras, pontuação, descontos e consistência financeira.
+- **Autoatendimento e-Útil:** formulário multi-etapas integrado a backend em Go e ambiente WordPress.
+- **Pandora:** hub multiagente de IA com conversas, memória e base de conhecimento.
+
+O portfólio também apresenta SolaBridge, Sola Software, O Cravo e a Rosa e um conjunto de automações internas. Projetos privados são identificados de forma transparente e têm informações sensíveis omitidas.
+
+## Arquitetura de conteúdo
+
+Os dados ficam centralizados para evitar divergência entre interface, API e páginas:
+
+```text
+src/data/projects.ts   # conteúdo e tipos dos cases
+src/data/stacks.ts     # perfil e tecnologias por contexto de uso
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esses arquivos alimentam:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- cards da home;
+- páginas em `/projetos/[slug]`;
+- `GET /api/projects`;
+- `GET /api/projects/[slug]`;
+- `GET /api/stacks`;
+- metadata das páginas de projeto.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Stack do portfólio
 
-## Learn More
+- Next.js 16 e React 19;
+- TypeScript;
+- Tailwind CSS;
+- Framer Motion;
+- Lucide React;
+- next-themes.
 
-To learn more about Next.js, take a look at the following resources:
+## Executando localmente
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Requisitos: Node.js compatível com Next.js 16 e npm.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install
+npm run dev
+```
 
-## Deploy on Vercel
+A aplicação ficará disponível em [http://localhost:3000](http://localhost:3000).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Validação
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+npm run build
+```
+
+## Estrutura principal
+
+```text
+src/
+├── app/
+│   ├── api/                 # endpoints de projetos e stack
+│   ├── projetos/            # páginas dedicadas dos cases
+│   ├── layout.tsx           # metadata global
+│   └── page.tsx             # composição da home
+├── components/portfolio/    # seções, cards e template de case
+├── data/                    # fontes centrais de conteúdo
+└── hook/                    # interações da navegação e do hero
+```
+
+## Privacidade
+
+O repositório do portfólio não expõe dados de clientes, métricas não verificadas ou links privados. Quando um trabalho não pode ser aberto, o conteúdo usa termos como “case privado”, “projeto interno” e “informações sensíveis omitidas”.

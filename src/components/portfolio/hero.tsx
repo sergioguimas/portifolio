@@ -31,7 +31,7 @@ export function Hero() {
             transition={{ duration: 0.55 }}
             className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.22em] text-cyan-700 dark:text-cyan-300"
           >
-            Full Stack · WEB · Automação
+            Full Stack · Sistemas web · Automação
           </motion.span>
 
           <motion.h1
@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 max-w-4xl text-5xl font-black leading-[0.92] tracking-[-0.045em] text-zinc-950 dark:text-white sm:text-6xl lg:text-[5.2rem]"
           >
-            Produtos digitais escaláveis e automação inteligente.
+            Sistemas e automações para problemas reais de negócio.
           </motion.h1>
 
           <motion.p
@@ -49,7 +49,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-8 max-w-2xl text-[1.05rem] leading-8 text-zinc-600 dark:text-zinc-300"
           >
-            Desenvolvedor focado em arquitetar e implementar ecossistemas que unem TypeScript, Node.js e automações avançadas. Especialista em tirar projetos do papel e transformá-los em ferramentas prontas para o mercado.
+            Sou Sérgio Guimarães, estudante de Análise e Desenvolvimento de Sistemas e
+            desenvolvedor com experiência prática em SaaS, integrações, bancos de dados e
+            automação de processos.
           </motion.p>
 
           <motion.div
@@ -62,14 +64,14 @@ export function Hero() {
               href="#projetos"
               className="rounded-full bg-zinc-950 px-6 py-3 text-sm font-semibold text-white transition hover:scale-[1.02] dark:bg-white dark:text-zinc-950"
             >
-              Conhecer Portfólio
+              Ver projetos
             </a>
 
             <a
               href="#api"
               className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-800 transition hover:border-zinc-950 hover:bg-zinc-950 hover:text-white dark:border-white/15 dark:text-white dark:hover:bg-white dark:hover:text-zinc-950"
             >
-              Ver API em ação
+              Explorar a API
             </a>
           </motion.div>
 
@@ -81,8 +83,8 @@ export function Hero() {
           >
             <span>Next.js</span>
             <span>TypeScript</span>
-            <span>Node.js</span>
             <span>Supabase</span>
+            <span>PostgreSQL</span>
             <span>n8n</span>
           </motion.div>
         </div>

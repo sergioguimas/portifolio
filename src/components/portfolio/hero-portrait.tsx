@@ -90,7 +90,7 @@ export function HeroPortrait() {
           </p>
 
           <p className="mt-2 text-base font-semibold leading-6 text-white">
-            Arquitetura e Desenvolvimento com foco em agilidade e produção.
+            Interface, dados, regra de negócio e automação no mesmo produto.
           </p>
         </motion.div>
       </motion.div>

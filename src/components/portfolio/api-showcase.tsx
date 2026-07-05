@@ -9,18 +9,15 @@ import {
   Check,
   RefreshCw,
   AlertCircle,
-  LayoutDashboard,
   Code2,
   Server,
   Bot,
   Wrench,
 } from "lucide-react";
 
-type StackLevel = "advanced" | "intermediate" | "basic";
-
 type StackItem = {
   name: string;
-  level: StackLevel;
+  context: string;
 };
 
 type StacksResponse = {
@@ -34,6 +31,7 @@ type StacksResponse = {
     backend?: StackItem[];
     automation?: StackItem[];
     infra?: StackItem[];
+    ai?: StackItem[];
   };
 };
 
@@ -44,6 +42,9 @@ type ProjectItem = {
   description: string;
   stack: string[];
   href: string;
+  status: string;
+  featured: boolean;
+  private: boolean;
 };
 
 type ProjectsResponse = {
@@ -65,12 +66,12 @@ const endpoints: EndpointItem[] = [
   {
     label: "GET /api/stacks",
     path: "/api/stacks",
-    description: "Tecnologias, especialidades e áreas em que atuo no desenvolvimento.",
+    description: "Tecnologias organizadas pelo contexto em que são usadas nos projetos.",
   },
   {
     label: "GET /api/projects",
     path: "/api/projects",
-    description: "Projetos que representam minha forma de construir produto, automação e sistema real.",
+    description: "A mesma fonte de dados que alimenta cards, páginas e metadados dos cases.",
   },
 ];
 
@@ -146,13 +147,13 @@ export function ApiShowcase() {
           </p>
 
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-zinc-950 dark:text-white sm:text-5xl">
-            Dados reais, duas formas de visualizar.
+            Uma fonte de dados, várias formas de apresentar.
           </h2>
 
           <p className="mt-6 text-base leading-8 text-zinc-600 dark:text-zinc-300 sm:text-lg">
-            Aqui a mesma API pode ser vista como resposta JSON ou como interface
-            adaptativa. Isso mostra não só a estrutura dos dados, mas também como
-            eles podem alimentar experiências visuais reais.
+            Os endpoints expõem os mesmos dados usados pela interface. É uma demonstração
+            pequena, mas concreta, de modelagem, reaproveitamento e separação entre conteúdo
+            e apresentação.
           </p>
         </motion.div>
 
@@ -387,31 +388,33 @@ function StacksDashboard({ data }: { data: StacksResponse }) {
       icon: Wrench,
       items: data.stacks.infra ?? [],
     },
+    {
+      key: "ai",
+      label: "IA e agentes",
+      icon: Sparkles,
+      items: data.stacks.ai ?? [],
+    },
   ].filter((group) => group.items.length > 0);
 
   const allItems = categories.flatMap((group) => group.items);
-  const advancedCount = allItems.filter((item) => item.level === "advanced").length;
-  const intermediateCount = allItems.filter(
-    (item) => item.level === "intermediate"
-  ).length;
 
   return (
     <div className="space-y-5 text-zinc-100">
       <div className="grid gap-4 md:grid-cols-3">
         <StatCard
-          label="Especialidades"
+          label="Tecnologias"
           value={String(allItems.length)}
-          helper="Tecnologias mapeadas"
+          helper="Ferramentas com contexto"
         />
         <StatCard
-          label="Nível avançado"
-          value={String(advancedCount)}
-          helper="Stacks com domínio forte"
+          label="Áreas"
+          value={String(categories.length)}
+          helper="Frentes de atuação"
         />
         <StatCard
-          label="Nível intermediário"
-          value={String(intermediateCount)}
-          helper="Aprofundamento contínuo"
+          label="Focos"
+          value={String(data.focus?.length ?? 0)}
+          helper="Problemas recorrentes"
         />
       </div>
 
@@ -497,10 +500,12 @@ function StacksDashboard({ data }: { data: StacksResponse }) {
                 {group.items.map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3"
+                    className="flex items-start justify-between gap-4 rounded-2xl border border-white/10 bg-black/20 px-4 py-3"
                   >
                     <span className="text-sm text-zinc-200">{item.name}</span>
-                    <LevelBadge level={item.level} />
+                    <span className="max-w-[55%] text-right text-xs leading-5 text-zinc-400">
+                      {item.context}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -607,33 +612,5 @@ function StatCard({
       <p className="mt-3 text-3xl font-bold text-white">{value}</p>
       <p className="mt-2 text-sm text-zinc-400">{helper}</p>
     </div>
-  );
-}
-
-function LevelBadge({ level }: { level: StackLevel }) {
-  const styles: Record<StackLevel, string> = {
-    advanced:
-      "border-emerald-400/20 bg-emerald-400/10 text-emerald-300",
-    intermediate:
-      "border-amber-400/20 bg-amber-400/10 text-amber-300",
-    basic:
-      "border-zinc-400/20 bg-zinc-400/10 text-zinc-300",
-  };
-
-  const labels: Record<StackLevel, string> = {
-    advanced: "Avançado",
-    intermediate: "Intermediário",
-    basic: "Básico",
-  };
-
-  return (
-    <span
-      className={[
-        "rounded-full border px-3 py-1 text-xs font-medium",
-        styles[level],
-      ].join(" ")}
-    >
-      {labels[level]}
-    </span>
   );
 }

@@ -1,10 +1,24 @@
+import type { Metadata } from "next";
+import { ProjectCase } from "@/components/portfolio/project-case";
+import { getProjectBySlug } from "@/data/projects";
+
+const project = getProjectBySlug("eliza-saas");
+
+export const metadata: Metadata = {
+  title: "Eliza | Case de projeto",
+  description:
+    "SaaS multi-tenant para clínicas com agenda, pacientes, PWA e automações via WhatsApp.",
+  openGraph: {
+    title: "Eliza | Case de projeto",
+    description:
+      "SaaS multi-tenant para clínicas com agenda, pacientes, PWA e automações via WhatsApp.",
+    type: "article",
+    locale: "pt_BR",
+  },
+};
+
 export default function ElizaSaaSPage() {
-  return (
-    <main className="min-h-screen px-6 py-16">
-      <h1 className="text-4xl font-bold">Eliza SaaS</h1>
-      <p className="mt-4 text-zinc-600 dark:text-zinc-300">
-        Página em construção.
-      </p>
-    </main>
-  );
+  if (!project) return null;
+
+  return <ProjectCase project={project} />;
 }

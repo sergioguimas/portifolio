@@ -1,6 +1,7 @@
 import { Header } from "@/components/portfolio/header";
 import { Hero } from "@/components/portfolio/hero";
 import { About } from "@/components/portfolio/about";
+import { Solutions } from "@/components/portfolio/solutions";
 import { Skills } from "@/components/portfolio/skills";
 import { Projects } from "@/components/portfolio/projects";
 import { ApiShowcase } from "@/components/portfolio/api-showcase";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Header />
       <Hero />
       <About />
+      <Solutions />
       <Skills />
       <Projects />
       <ApiShowcase />

@@ -9,6 +9,7 @@ import { useActiveSection } from "@/hook/use-active-section";
 const navItems = [
   { label: "Início", href: "#topo", id: "topo" },
   { label: "Sobre", href: "#sobre", id: "sobre" },
+  { label: "Soluções", href: "#solucoes", id: "solucoes" },
   { label: "Skills", href: "#skills", id: "skills" },
   { label: "Projetos", href: "#projetos", id: "projetos" },
   { label: "Contato", href: "#contato", id: "contato" },
@@ -20,7 +21,7 @@ export function Header() {
 
   useEffect(() => {
     const closeOnResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1024) {
         setMobileOpen(false);
       }
     };
@@ -60,7 +61,7 @@ export function Header() {
               Sergio.dev
             </a>
 
-            <nav className="relative hidden items-center gap-2 md:flex">
+            <nav className="relative hidden items-center gap-2 lg:flex">
               <div className="relative flex items-center rounded-full border border-zinc-200/80 bg-white/65 p-1 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04]">
                 {navItems.map((item) => {
                   const isActive = activeSection === item.id;
@@ -107,7 +108,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => setMobileOpen((prev) => !prev)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white/70 text-zinc-800 backdrop-blur-xl transition hover:scale-105 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-100 md:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white/70 text-zinc-800 backdrop-blur-xl transition hover:scale-105 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-100 lg:hidden"
                 aria-label="Abrir menu"
                 aria-expanded={mobileOpen}
               >
@@ -133,7 +134,7 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40 lg:hidden"
           >
             <div
               className="absolute inset-0 bg-black/45 backdrop-blur-sm"
