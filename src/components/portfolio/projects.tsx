@@ -6,9 +6,13 @@ import {
   Bot,
   Building2,
   Calculator,
+  CalendarCheck,
+  Cpu,
+  Database,
   FileCheck2,
   HeartPulse,
   LockKeyhole,
+  ShieldCheck,
   ShoppingBag,
   Store,
   TerminalSquare,
@@ -33,6 +37,10 @@ const projectIcons: Record<ProjectIconKey, LucideIcon> = {
   studio: Building2,
   catalog: Store,
   automation: TerminalSquare,
+  compliance: ShieldCheck,
+  lab: Cpu,
+  event: CalendarCheck,
+  data: Database,
 };
 
 function ProjectCover({ project, delay }: { project: Project; delay: number }) {
@@ -155,12 +163,12 @@ export function Projects() {
               Outros trabalhos
             </p>
             <h3 className="mt-3 text-3xl font-bold tracking-tight text-zinc-950 dark:text-white">
-              Projetos acadêmicos, iniciativa de produto e automação operacional.
+              Produtos menores, automações de dados e laboratório pessoal.
             </h3>
           </div>
           <p className="max-w-md text-sm leading-7 text-zinc-600 dark:text-zinc-300">
-            Contextos diferentes que mostram colaboração, adaptação de stack e resolução
-            pragmática de problemas.
+            Contextos diferentes que mostram adaptação de stack, operação real e
+            resolução pragmática de problemas.
           </p>
         </div>
 

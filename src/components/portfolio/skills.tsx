@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import {
   Bot,
-  BrainCircuit,
   Braces,
   CloudCog,
   Container,
@@ -29,13 +28,13 @@ const technologyIcons: Record<Technology, LucideIcon> = {
   TypeScript: Braces,
   Supabase: CloudCog,
   PostgreSQL: Database,
+  Go: ServerCog,
   n8n: Workflow,
   Playwright: Waypoints,
   Python: SquareTerminal,
   PowerShell: SquareTerminal,
   Docker: Container,
   Gemini: Bot,
-  OpenAI: BrainCircuit,
   "APIs REST": Network,
 };
 

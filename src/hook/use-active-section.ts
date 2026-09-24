@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const sectionIds = ["topo", "sobre", "solucoes", "skills", "projetos", "contato"];
+const sectionIds = ["topo", "sobre", "solucoes", "skills", "projetos", "agora", "contato"];
 
 export function useActiveSection() {
   const [activeSection, setActiveSection] = useState("topo");
@@ -13,33 +13,23 @@ export function useActiveSection() {
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-        if (visible[0]?.target?.id) {
-          setActiveSection(visible[0].target.id);
-        }
-      },
-      {
-        rootMargin: "-20% 0px -45% 0px",
-        threshold: [0.2, 0.35, 0.5, 0.7],
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
+    // A seção ativa é a última cujo topo já passou de 30% da altura da tela.
+    // Proporção visível não funciona aqui: seções altas (como Projetos) nunca
+    // chegam a um limiar mínimo e o menu ficava preso na seção anterior.
     const onScroll = () => {
       setScrolled(window.scrollY > 16);
+
+      const marker = window.innerHeight * 0.3;
+      const current = sections.filter((section) => section.getBoundingClientRect().top <= marker).pop();
+      const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 4;
+
+      setActiveSection(atBottom ? sections[sections.length - 1].id : (current ?? sections[0]).id);
     };
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", onScroll);
     };
   }, []);

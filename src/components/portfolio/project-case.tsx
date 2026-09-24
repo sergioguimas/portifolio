@@ -110,6 +110,17 @@ export function ProjectCase({ project }: ProjectCaseProps) {
               >
                 Ver dados do case <ArrowUpRight size={15} />
               </Link>
+              {project.links?.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-800 transition hover:border-cyan-400/60 dark:text-cyan-200"
+                >
+                  {link.label} <ArrowUpRight size={15} />
+                </a>
+              ))}
             </div>
           </div>
 

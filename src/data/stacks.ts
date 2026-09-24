@@ -40,10 +40,11 @@ export const stackGroups: StackGroup[] = [
     label: "Backend e dados",
     description: "APIs, persistência e regras de negócio.",
     items: [
-      { name: "Node.js", context: "Serviços e integrações" },
-      { name: "Fastify", context: "APIs REST" },
       { name: "Supabase", context: "Autenticação, banco e RLS" },
-      { name: "PostgreSQL", context: "Modelagem e consultas relacionais" },
+      { name: "PostgreSQL", context: "Modelagem, regras em PL/pgSQL e RLS" },
+      { name: "Go", context: "APIs, workers e serviços leves" },
+      { name: "Node.js", context: "Serviços e integrações" },
+      { name: "SQLite", context: "Persistência simples de operar" },
     ],
   },
   {
@@ -73,8 +74,8 @@ export const stackGroups: StackGroup[] = [
     label: "IA e agentes",
     description: "IA aplicada a produtos e automações.",
     items: [
-      { name: "Gemini", context: "Integração com agentes" },
-      { name: "OpenAI", context: "Modelos e automações com IA" },
+      { name: "Gemini", context: "Geração, embeddings, visão e áudio" },
+      { name: "RAG / pgvector", context: "Busca vetorial por agente" },
       { name: "Bases de conhecimento", context: "Contexto reutilizável" },
       { name: "Memória de conversas", context: "Experiências persistentes" },
     ],
@@ -86,13 +87,13 @@ export const featuredTechnologies = [
   "TypeScript",
   "Supabase",
   "PostgreSQL",
+  "Go",
   "n8n",
   "Playwright",
   "Python",
   "PowerShell",
   "Docker",
   "Gemini",
-  "OpenAI",
   "APIs REST",
 ] as const;
 

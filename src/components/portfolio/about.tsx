@@ -24,16 +24,16 @@ const timelineItems = [
   },
   {
     label: "Atuação",
-    title: "Desenvolvimento aplicado à operação",
+    title: "Do suporte técnico ao desenvolvimento",
     description:
-      "Experiência próxima de usuários, processos e suporte técnico — contexto que ajuda a identificar onde um sistema ou uma automação realmente gera valor.",
+      "Comecei no suporte de uma empresa de software e passei a propor e construir as ferramentas que faltavam. Hoje respondo ponta a ponta por um sistema em produção — contexto que ajuda a ver onde software realmente gera valor.",
     icon: BriefcaseBusiness,
   },
   {
     label: "Experiência prática",
     title: "Sistemas, integrações e automações",
     description:
-      "Projetos com SaaS multi-tenant, regras comerciais, formulários complexos, WhatsApp, APIs, scripts e agentes de IA.",
+      "Projetos com SaaS multi-tenant, auditoria trabalhista, regras comerciais, formulários complexos, WhatsApp, APIs, scripts e agentes de IA.",
     icon: Layers3,
   },
   {
@@ -89,8 +89,8 @@ const practiceAreas = [
     icon: Workflow,
   },
   {
-    category: "Produto web",
-    items: ["Next.js", "TypeScript", "PWA"],
+    category: "Backend",
+    items: ["Go", "Node.js", "filas"],
     icon: Braces,
   },
 ];

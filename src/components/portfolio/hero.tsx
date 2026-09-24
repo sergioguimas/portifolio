@@ -85,7 +85,7 @@ export function Hero() {
             <span>TypeScript</span>
             <span>Supabase</span>
             <span>PostgreSQL</span>
-            <span>n8n</span>
+            <span>Go</span>
           </motion.div>
         </div>
 

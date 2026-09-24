@@ -4,6 +4,7 @@ import { About } from "@/components/portfolio/about";
 import { Solutions } from "@/components/portfolio/solutions";
 import { Skills } from "@/components/portfolio/skills";
 import { Projects } from "@/components/portfolio/projects";
+import { Now } from "@/components/portfolio/now";
 import { ApiShowcase } from "@/components/portfolio/api-showcase";
 import { Contact } from "@/components/portfolio/contact";
 import { NeuralBackground } from "@/components/portfolio/neural-background";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Solutions />
       <Skills />
       <Projects />
+      <Now />
       <ApiShowcase />
       <Contact />
     </main>
